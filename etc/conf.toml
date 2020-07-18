@@ -1,0 +1,78 @@
+[env]
+    webhookkey = ""
+
+	[[env.stocks]]
+		name = "春风动力"
+		id   = "603129"
+
+	[[env.stocks]]
+		name = "隆基股份"
+		id   = "601012"
+
+	[[env.stocks]]
+		name = "恒立液压"
+		id   = "601100"
+
+	[[env.stocks]]
+		name = "紫光国微"
+		id   = "002049"
+
+	[[env.stocks]]
+		name = "汇顶科技"
+		id   = "603160"
+
+	[[env.stocks]]
+		name = "闻泰科技"
+		id   = "600745"
+
+	[[env.stocks]]
+		name = "沪电股份"
+		id   = "002463"
+
+	[[env.stocks]]
+		name = "深南电路"
+		id   = "002916"
+
+	[[env.stocks]]
+		name = "立讯精密"
+		id   = "002475"
+
+	[[env.stocks]]
+		name = "宏发股份"
+		id   = "600885"
+
+	[[env.stocks]]
+		name = "中兴科技"
+		id   = "000063"
+
+	[[env.stocks]]
+		name = "中银证券"
+		id   = "601696"
+
+	[[env.stocks]]
+		name = "中顺洁柔"
+		id   = "002511"
+
+	[[env.stocks]]
+		name = "小熊电器"
+		id   = "002959"
+
+	[[env.stocks]]
+		name = "苏宁易购"
+		id   = "002024"
+
+	[[env.stocks]]
+		name = "安琪酵母"
+		id   = "600298"
+
+	[[env.stocks]]
+		name = "安井食品"
+		id   = "603345"
+
+	[[env.stocks]]
+		name = "三全食品"
+		id   = "002216"
+
+	[[env.stocks]]
+		name = "双汇发展"
+		id   = "000895"
