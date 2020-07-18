@@ -130,7 +130,7 @@ func FetchStockData() (map[string]*StockDayData, error) {
 	m := make(map[string]*StockDayData)
 	stockList := cfg.EnvConfig.StockList
 	for _, stock := range stockList {
-		reply, err := GetStock(stock.Id, time.Now().Add(time.Hour * -24), time.Now().Add(time.Hour * -24))
+		reply, err := GetStock(stock.Id, time.Now(), time.Now())
 		if err != nil {
 			log.Logger.Error("get stock fail", zap.Error(err))
 			continue
