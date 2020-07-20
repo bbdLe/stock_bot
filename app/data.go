@@ -36,7 +36,7 @@ type StockDayData struct {
 func (self *StockDayData) String() string {
 	msg := ""
 
-	msg += fmt.Sprintf("股价 : %s ", util.ConvVal2MarkDown(self.Spj))
+	msg += fmt.Sprintf("股价 : %s ", util.ConvPrice2MarkDown(self.KaiPan, self.Spj))
 	msg += fmt.Sprintf("涨幅 : %s ", util.ConvPercent2MarkDown(self.Zf))
 	msg += fmt.Sprintf("通吃率 : %s ", util.ConvPercent2MarkDown(self.Tcl))
 	msg += fmt.Sprintf("ddx : %s ", util.ConvVal2MarkDown(self.Ddx))

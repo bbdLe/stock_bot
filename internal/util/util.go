@@ -39,6 +39,25 @@ func ConvPercent2MarkDown(str string) string {
 	}
 }
 
+func ConvPrice2MarkDown(kpj string, xj string) string {
+	kpjVal, err := strconv.ParseFloat(kpj, 64)
+	if err != nil {
+		return ""
+	}
+
+	xjVal, err := strconv.ParseFloat(xj, 64)
+	if err != nil {
+		return ""
+	}
+
+	if xjVal > kpjVal {
+		return fmt.Sprintf(`<font color="#FF0000">%.2f</font>`, xjVal)
+	} else {
+		return fmt.Sprintf(`<font color="info">%.2f</font>`, xjVal)
+	}
+
+}
+
 // 当天零时
 func ZeroTime(t time.Time) time.Time {
 	timeStr := t.Format(DateFormat)
@@ -49,10 +68,13 @@ func ZeroTime(t time.Time) time.Time {
 func IsMarkTime() bool {
 	now := time.Now().Local()
 	zeroTime := ZeroTime(now)
-	openTime := zeroTime.Add(time.Hour * 9 + time.Minute * 30 - time.Second)
-	closeTime := zeroTime.Add(time.Hour * 15 + time.Second)
+	MorningOpenTime := zeroTime.Add(time.Hour * 9 + time.Minute * 30 + time.Minute)
+	MorningCloseTime := MorningOpenTime.Add(time.Hour * 2 + time.Second)
 
-	if now.After(openTime) && now.Before(closeTime) {
+	afternoonOpenTime := zeroTime.Add(time.Hour * 13 + time.Minute)
+	afterNoonCloseTime := afternoonOpenTime.Add(time.Hour * 2 + time.Second)
+
+	if (now.After(MorningOpenTime) && now.Before(MorningCloseTime)) || (now.After(afternoonOpenTime) && now.Before(afterNoonCloseTime)) {
 		return true
 	} else {
 		return false
